@@ -1,21 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Text-Transformer — 27 Modi für deutschen Text",
+  "name": "Text-Transformer - 27 Modi fuer deutschen Text",
   "version": "3.1.0",
-  "description": "Verwandelt deutschen Text in Gen-Z, Bildungssprache, 12 Dialekte (inkl. Hessisch, Saarländisch, Kölsch), 80er-Slang, DDR-Parteisprech, Barock, Luther-Orthographie, Bürokrat, Politiker-Sprech, Gender-Varianten, Adjektivkiller und mehr — mit Drei-Akt-Dramaturgie und grammatikbewusster Ersetzung",
+  "description": "Verwandelt deutschen Text in Gen-Z, Bildungssprache, 12 Dialekte (inkl. Hessisch, Saarlaendisch, Koelsch), 80er-Slang, DDR-Parteisprecht, Barock, Luther-Orthographie, Bueroktrat, Politiker-Sprech, Gender-Varianten und mehr.",
   "permissions": ["activeTab", "storage"],
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    }
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
