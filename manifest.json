@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Text-Transformer - 12 Modi fuer deutschen Text",
-  "version": "4.2.0",
-  "description": "Verwandelt deutschen Text in Gen-Z, Bildungssprache, 12 Dialekte (inkl. Hessisch, Schwaebisch, Berlinerisch, Fraenkisch) und mehr",
+  "version": "4.2.1",
+  "description": "Verwandelt deutschen Text in Gen-Z, Bildungssprache, 12 Dialekte (inkl. Hessisch, Schwaebisch, Fraenkisch, Berlinerisch u.v.m.) und bietet Gender- sowie Text-Werkzeuge.",
   "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"
