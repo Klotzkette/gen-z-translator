@@ -18,10 +18,9 @@
     /* Hintergrund-Themes */
     body.theme-genz    { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
     body.theme-formal  { background: linear-gradient(135deg, #2c3e50 0%, #4a0e0e 100%); }
-    body.theme-dialect { background: linear-gradient(135deg, #2d5016 0%, #1a472a 100%); }
-    body.theme-special { background: linear-gradient(135deg, #4a1942 0%, #1a1a2e 100%); }
-    body.theme-gender  { background: linear-gradient(135deg, #6b21a8 0%, #db2777 100%); }
-    body.theme-barock  { background: linear-gradient(135deg, #78350f 0%, #451a03 100%); }
+    body.theme-dialect  { background: linear-gradient(135deg, #2d5016 0%, #1a472a 100%); }
+    body.theme-special  { background: linear-gradient(135deg, #4a1942 0%, #1a1a2e 100%); }
+    body.theme-gender   { background: linear-gradient(135deg, #6b21a8 0%, #db2777 100%); }
 
     .header { text-align: center; padding: 14px 16px 8px; }
     .header h1 { font-size: 16px; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
@@ -50,28 +49,6 @@
     }
     .mode-select option { background: #333; color: #fff; }
     .mode-select:focus { outline: none; border-color: #fff; }
-
-    /* Gender-Submodus (nur sichtbar wenn Gender ausgewählt) */
-    .gender-submodes {
-      display: none;
-      padding: 6px 16px 0;
-    }
-    .gender-submodes.visible { display: block; }
-    .gender-submodes select {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-size: 12px;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='white' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-    }
-    .gender-submodes option { background: #333; color: #fff; }
 
     /* Controls */
     .controls { padding: 8px 16px; display: flex; flex-direction: column; gap: 6px; }
@@ -107,6 +84,7 @@
       font-size: 11px; background: rgba(255,255,255,0.25);
       padding: 2px 8px; border-radius: 8px; font-weight: 700;
     }
+
     input[type="range"] {
       -webkit-appearance: none; width: 100%; height: 5px;
       background: rgba(255,255,255,0.3); border-radius: 3px; outline: none;
@@ -117,21 +95,9 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
-    /* Akt-Anzeige */
-    .akt-info { padding: 0 16px; margin-bottom: 6px; }
-    .akt-bar { display: flex; gap: 3px; margin-bottom: 3px; }
-    .akt-segment { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
-    .akt-segment .fill { position: absolute; top: 0; left: 0; bottom: 0; border-radius: 2px; transition: width 0.3s; }
-    .akt-segment:nth-child(1) .fill { background: rgba(255,255,255,0.5); width: 100%; }
-    .akt-segment:nth-child(2) .fill { background: rgba(255,255,255,0.7); width: 100%; }
-    .akt-segment:nth-child(3) .fill { background: #fff; width: 100%; }
-    .akt-labels { display: flex; justify-content: space-between; font-size: 8px; opacity: 0.6; }
-
     /* Conditional visibility */
     .genz-only { display: block; }
     body:not(.theme-genz) .genz-only { display: none; }
-    .akt-only { display: block; }
-    .no-akt .akt-only { display: none; }
 
     /* Action Buttons */
     .action-btn {
@@ -151,72 +117,42 @@
 </head>
 <body class="theme-genz">
   <div class="header">
-    <h1 id="headerTitle">Text-Transformer 🎭</h1>
-    <div class="subtitle" id="headerSubtitle">Drei Akte der Verwandlung</div>
+    <h1 id="headerTitle">Text-Transformer v4.2</h1>
+    <div class="subtitle" id="headerSubtitle">12 Modi fuer deutschen Text</div>
   </div>
 
   <!-- Modus-Auswahl -->
   <div class="mode-section">
     <label>MODUS</label>
     <select class="mode-select" id="modeSelect">
-      <optgroup label="Sprachstile">
-        <option value="genz" selected>💀🔥 Gen-Z / Gen Alpha</option>
-        <option value="formal">📜⚖️ Bildungssprache</option>
-        <option value="achtziger">📼 80er West-Slang (Gen X)</option>
-        <option value="politiker">🏛️ Politiker-Sprech</option>
-        <option value="burokrat">🏢 Der Bürokrat</option>
-        <option value="ddr">☭ DDR-Parteisprech</option>
-        <option value="barock">🏰 Barock-Deutsch</option>
-        <option value="luther">✝️ Lutherbibel-Orthographie</option>
+      <optgroup label="Sprachstile (2)">
+        <option value="genz" selected>Gen-Z</option>
+        <option value="formal">Bildungssprache</option>
       </optgroup>
-      <optgroup label="Dialekte">
-        <option value="berlinerisch">🐻 Berlinerisch</option>
-        <option value="saechsisch">🎻 Sächsisch</option>
-        <option value="fraenkisch">🌭 Fränkisch</option>
-        <option value="bairisch">🥨 Bairisch</option>
-        <option value="schwaebisch">🏠 Schwäbisch</option>
-        <option value="ruhrpott">⚒️ Ruhrpott</option>
-        <option value="norddeutsch">⚓ Norddeutsch</option>
-        <option value="wienerisch">🎡 Wienerisch</option>
-        <option value="schweizerdeutsch">🏔️ Schweizerdeutsch</option>
-        <option value="hessisch">🍎 Hessisch</option>
-        <option value="saarlaendisch">🥨 Saarländisch</option>
-        <option value="koelsch">🍺 Kölsch</option>
+      <optgroup label="Dialekte (3)">
+        <option value="fraenkisch">Fraenkisch</option>
+        <option value="berlinerisch">Berlinerisch</option>
+        <option value="schwaebisch">Schwaebisch</option>
       </optgroup>
-      <optgroup label="Text-Werkzeuge">
-        <option value="emoji">😊 Emoji-Sprinkler</option>
-        <option value="kleinschreibung">🔡 Alles kleinschreiben</option>
-        <option value="adjektivkiller">✂️ Adjektivkiller</option>
-        <option value="adjektivflut">🌊 Adjektiv-Überschwemmer</option>
-        <option value="vokalentferner">🕳️ Vokalentferner</option>
-        <option value="gender_star">⭐ Gendern (Stern *)</option>
-        <option value="gender_colon">✳️ Gendern (Doppelpunkt :)</option>
-        <option value="gender_explicit">📝 Gendern (ausgeschrieben)</option>
-        <option value="gender_participle">🔄 Gendern (Partizip)</option>
-        <option value="gender_maskulinum">♂️ Generisches Maskulinum</option>
+      <optgroup label="Gendern (4)">
+        <option value="gender_star">Stern (Leser*innen)</option>
+        <option value="gender_colon">Doppelpunkt (Leser:innen)</option>
+        <option value="gender_participle">Partizip (Lesende)</option>
+        <option value="gender_maskulinum">Generisches Maskulinum</option>
+      </optgroup>
+      <optgroup label="Text-Werkzeuge (3)">
+        <option value="adjektivkiller">Adjektivkiller</option>
+        <option value="kleinschreibung">Kleinschreibung</option>
+        <option value="vokalentferner">Vokalentferner</option>
       </optgroup>
     </select>
-  </div>
-
-  <!-- Akt-Visualisierung -->
-  <div class="akt-info akt-only">
-    <div class="akt-bar">
-      <div class="akt-segment"><div class="fill"></div></div>
-      <div class="akt-segment"><div class="fill"></div></div>
-      <div class="akt-segment"><div class="fill"></div></div>
-    </div>
-    <div class="akt-labels">
-      <span id="aktLabel1">Akt I: Subtil</span>
-      <span id="aktLabel2">Akt II: Kontrast</span>
-      <span id="aktLabel3">Akt III: Eskalation</span>
-    </div>
   </div>
 
   <div class="controls">
     <div class="control-row">
       <div>
         <label id="labelReplace">Wort-Ersetzung</label>
-        <div class="desc" id="descReplace">Wörter durch Slang/Dialekt ersetzen</div>
+        <div class="desc" id="descReplace">Woerter durch Slang/Dialekt ersetzen</div>
       </div>
       <label class="switch">
         <input type="checkbox" id="toggleReplace" checked>
@@ -226,8 +162,8 @@
 
     <div class="control-row">
       <div>
-        <label id="labelFillers">Füllwörter & Kommentare</label>
-        <div class="desc" id="descFillers">Typische Füllwörter einfügen</div>
+        <label id="labelFillers">Fuellwoerter & Kommentare</label>
+        <div class="desc" id="descFillers">Typische Fuellwoerter einfuegen</div>
       </div>
       <label class="switch">
         <input type="checkbox" id="toggleFillers" checked>
@@ -238,7 +174,7 @@
     <div class="control-row genz-only">
       <div>
         <label>Emoji-Ketten</label>
-        <div class="desc">💀😭🔥 nach Sätzen einfügen</div>
+        <div class="desc">Nach Saetzen einfuegen</div>
       </div>
       <label class="switch">
         <input type="checkbox" id="toggleEmojis" checked>
@@ -248,17 +184,17 @@
 
     <div class="intensity-section">
       <div class="row">
-        <label>Intensität</label>
+        <label>Intensitaet</label>
         <span class="intensity-value" id="intensityLabel">50%</span>
       </div>
       <input type="range" id="intensity" min="10" max="100" value="50" step="5">
     </div>
   </div>
 
-  <button class="action-btn" id="transformBtn">SEITE TRANSFORMIEREN 🎭</button>
-  <button class="action-btn" id="revertBtn" style="display:none;">ZURÜCKSETZEN ↩️</button>
+  <button class="action-btn" id="transformBtn">SEITE TRANSFORMIEREN</button>
+  <button class="action-btn" id="revertBtn" style="display:none;">ZURUECKSETZEN</button>
 
-  <div class="footer" id="footerText">Text-Transformer v3.1 — 27 Modi</div>
+  <div class="footer" id="footerText">Text-Transformer v4.2 -- 12 Modi</div>
 
   <script src="js/popup.js"></script>
 </body>
