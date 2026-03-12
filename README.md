@@ -1,87 +1,67 @@
-# Text-Transformer v3.1.0
+# Text-Transformer v4.2
 
-Chrome Extension mit 27 Modi die deutschen Text in verschiedene Sprachstile, Dialekte und Textformate verwandelt.
+Chrome Extension die deutschen Text in verschiedene Sprachstile, Dialekte und Textformate verwandelt — mit 12 praxisnahen Modi.
 
 ---
 
 ## Download & Installation
 
-**Neueste Version: v3.1.0**
+**Neueste Version: v4.2**
 
 1. [Release herunterladen](https://github.com/Klotzkette/gen-z-translator/releases/latest) (.zip)
 2. Entpacken
 3. Chrome > `chrome://extensions` > Entwicklermodus AN
-4. "Entpackte Erweiterung laden" > entpackten Ordner auswaehlen
+4. „Entpackte Erweiterung laden" > entpackten Ordner auswählen
 
 ---
 
 ## Features
 
-- 27 Transformations-Modi in einem Dropdown
-- Intensitaetsregler (10-100%)
-- Drei-Akte-System (Subtil > Kontrast > Eskalation)
-- Dynamische Themes je nach Modus
-- Ein-Klick Transformation & Zuruecksetzen
+- 12 Transformations-Modi in einem übersichtlichen Popup
+- Sauberes, schlichtes Design (hellblau-grau, gelbliche Akzente, Arial)
+- Ein-Klick Transformation
+- Kein API-Key nötig — läuft komplett lokal
 
 ---
 
-## Modi-Uebersicht
+## Modi-Übersicht
 
-### Sprachstile (8)
+### Sprachstile (2)
 | Modus | Beschreibung |
 |---|---|
-| Gen-Z / Gen Alpha | Jugendsprache mit Emoji-Ketten |
+| Gen-Z | Jugendsprache mit Emoji-Ketten |
 | Bildungssprache | Formaler, gehobener Stil |
-| 80er West-Slang | Gen-X Retro-Sprache |
-| Politiker-Sprech | Floskeln und Phrasen |
-| Der Buerokrat | Amtsdeutsch |
-| DDR-Parteisprech | Sozialistischer Sprachstil |
-| Barock-Deutsch | Historisch pompoeser Stil |
-| Lutherbibel-Orthographie | Altertueumliche Schreibweise |
 
-### Dialekte (12)
+### Dialekte (3)
 | Dialekt | Region |
 |---|---|
+| Fränkisch | Franken |
 | Berlinerisch | Berlin |
-| Saechsisch | Sachsen |
-| Fraenkisch | Franken |
-| Bairisch | Bayern |
-| Schwaebisch | Baden-Wuerttemberg |
-| Ruhrpott | NRW |
-| Norddeutsch | Norddeutschland |
-| Wienerisch | Wien |
-| Schweizerdeutsch | Schweiz |
-| Hessisch | Hessen |
-| Saarlaendisch | Saarland |
-| Koelsch | Koeln |
+| Schwäbisch | Baden-Württemberg |
 
-### Text-Werkzeuge (7)
+### Gendern (4)
+| Variante | Beispiel |
+|---|---|
+| Stern | Leser*innen |
+| Doppelpunkt | Leser:innen |
+| Partizip | Lesende |
+| Generisches Maskulinum | Leser |
+
+### Text-Werkzeuge (3)
 | Werkzeug | Funktion |
 |---|---|
-| Emoji-Sprinkler | Emojis in Text einstreuen |
-| Alles kleinschreiben | Gross-/Kleinschreibung entfernen |
 | Adjektivkiller | Adjektive entfernen |
-| Adjektiv-Ueberschwemmer | Extra Adjektive einfuegen |
+| Kleinschreibung | Großschreibung entfernen |
 | Vokalentferner | Vokale aus Text entfernen |
-| Gendern (5 Varianten) | Stern, Doppelpunkt, ausgeschrieben, Partizip, generisches Maskulinum |
-
----
-
-## Steuerung
-
-- **Wort-Ersetzung** ein/aus
-- **Fuellwoerter & Kommentare** ein/aus
-- **Emoji-Ketten** ein/aus (nur Gen-Z Modus)
-- **Intensitaet** per Schieberegler
 
 ---
 
 ## Technik
 
 - Manifest V3 Chrome Extension
-- Kein API-Key noetig, laeuft komplett lokal
-- Content Scripts fuer Seitenmanipulation
-- Modularer Aufbau (15 JS-Module)
+- Kein API-Key nötig, läuft komplett lokal
+- Content Scripts für Seitenmanipulation
+- Modularer Aufbau
 
 ---
 
@@ -91,4 +71,4 @@ MIT
 
 ---
 
-*Text-Transformer v3.1 -- 27 Modi fuer deutschen Text*
+*Text-Transformer v4.2 — 12 Modi für deutschen Text*
